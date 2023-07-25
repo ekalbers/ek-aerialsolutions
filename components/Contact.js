@@ -1,5 +1,6 @@
 import React from "react";
-import CSRFToken from '@/components/CSRFToken';
+export const createUrl = process.env.NEXT_PUBLIC_API_CREATE;
+export const csrfUrl = process.env.NEXT_PUBLIC_API_CSRFTOKEN
 
 
 const Contact = ({ toggleContact }) => {
@@ -39,10 +40,11 @@ const Contact = ({ toggleContact }) => {
     req.append('message', message);
 
 
-    const url = 'http://localhost:8000/inforequests/info/'
+    const url = createUrl;
+
 
     try {
-      let csrf = await fetch('http://localhost:8000/get-csrf-token/')
+      let csrf = await fetch(csrfUrl)
       // const csrfToken = JSON.parse(await csrf.text())['csrfToken'];
       const csrfToken = getCookie('csrftoken');
       console.log(csrfToken);
