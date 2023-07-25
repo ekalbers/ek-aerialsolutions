@@ -9,7 +9,7 @@ export default function Footer() {
           <div className='mb-5 text-center text-gray-500 text-xl'>
             <p className='font-bold text-black'>Contact Us:</p>
             <p>937-654-9944</p>
-            <p>ethankalbers@gmail.com</p>
+            <p>info@ekaerialsolutions.com</p>
           </div>
           <div className='mt-5 mb-5 text-center text-gray-500 text-xl'>
             <p className='font-bold text-black'>Location:</p>
