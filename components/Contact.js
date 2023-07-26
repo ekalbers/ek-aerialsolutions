@@ -45,8 +45,8 @@ const Contact = ({ toggleContact }) => {
 
     try {
       let csrf = await fetch(csrfUrl)
-      const csrfToken = JSON.parse(await csrf.text())['csrfToken'];
-      // const csrfToken = getCookie('csrftoken');
+      // const csrfToken = JSON.parse(await csrf.text())['csrfToken'];
+      const csrfToken = getCookie('csrftoken');
       console.log(csrfToken);
       const options = {};
       // const headers = new Headers();
