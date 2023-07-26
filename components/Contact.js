@@ -45,14 +45,14 @@ const Contact = ({ toggleContact }) => {
 
     try {
       let csrf = await fetch(csrfUrl)
-      // const csrfToken = JSON.parse(await csrf.text())['csrfToken'];
-      const csrfToken = getCookie('csrftoken');
+      const csrfToken = JSON.parse(await csrf.text())['csrfToken'];
+      // const csrfToken = getCookie('csrftoken');
       console.log(csrfToken);
       const options = {};
       // const headers = new Headers();
       // headers.append('X-CSRFToken', csrfToken);
       options.method = "POST";
-      options.body = JSON.stringify(req);
+      options.body = req;
       options.headers = {
         'Content-Type': 'application/json',
         'X-CSRFToken': csrfToken
