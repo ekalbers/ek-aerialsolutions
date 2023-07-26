@@ -53,10 +53,9 @@ const Contact = ({ toggleContact }) => {
       // headers.append('X-CSRFToken', csrfToken);
       options.method = "POST";
       options.body = req;
-      options.headers = {
-        'Content-Type': 'application/json',
-        'X-CSRFToken': csrfToken
-      };
+      // options.headers = {
+      //   'X-CSRFToken': csrfToken
+      // };
       console.log(url);
       console.log(options);
       const response = await fetch(url, options);
