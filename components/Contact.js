@@ -65,18 +65,20 @@ const Contact = ({ toggleContact }) => {
 
     try {
       let csrf = await fetch(csrfUrl)
-      // const csrfToken = JSON.parse(await csrf.text())['csrfToken'];
-      const csrfToken = getCookie('csrftoken');
-      console.log(csrfToken);
+      const data = await csrf.json();
+      const token = data.csrfToken;
+      // const csrfToken = getCookie('csrftoken');
+      console.log(token);
       const options = {};
       // const headers = new Headers();
       // headers.append('X-CSRFToken', csrfToken);
       options.method = "POST";
-      options.body = formData;
+      options.body = JSON.stringify(formData);
       options.credentials = 'include';
-      // options.headers = {
-      //   'Content-Type': 'application/json'
-      // };
+      options.headers = {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': token
+      };
       console.log(createUrl);
       console.log(options);
       const response = await fetch(createUrl, options);
