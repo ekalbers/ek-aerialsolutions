@@ -52,9 +52,10 @@ const Contact = ({ toggleContact }) => {
       // const headers = new Headers();
       // headers.append('X-CSRFToken', csrfToken);
       options.method = "POST";
-      options.body = req;
+      options.body = JSON.stringify(req);
+      options.credentials = 'include';
       options.headers = {
-        'X-CSRFToken': csrfToken
+        'Content-Type': 'application/json'
       };
       console.log(url);
       console.log(options);
