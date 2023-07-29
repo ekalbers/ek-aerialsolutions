@@ -32,12 +32,18 @@ const Contact = ({ toggleContact }) => {
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const message = document.getElementById('message').value;
+    console.log(name)
+    console.log(company)
+    console.log(email)
+    console.log(phone)
+    console.log(message)
     const req = new FormData();
     req.append('name', name);
     req.append('company', company);
     req.append('email', email);
     req.append('phone', phone)
     req.append('message', message);
+    console.log(req)
 
 
     const url = createUrl;
