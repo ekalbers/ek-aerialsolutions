@@ -52,18 +52,18 @@ const Contact = ({ toggleContact }) => {
       // const headers = new Headers();
       // headers.append('X-CSRFToken', csrfToken);
       options.method = "POST";
-      options.body = JSON.stringify(req);
+      options.body = req;
       options.credentials = 'include';
-      options.headers = {
-        'Content-Type': 'application/json'
-      };
+      // options.headers = {
+      //   'Content-Type': 'application/json'
+      // };
       console.log(url);
       console.log(options);
       const response = await fetch(url, options);
       console.log(response);
       console.log(await response.text());
     } catch (err) {
-      console.log(err)
+      console.log("error", err);
     }
 
     toggleContact();
