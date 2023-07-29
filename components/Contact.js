@@ -43,7 +43,7 @@ const Contact = ({ toggleContact }) => {
     req.append('email', email);
     req.append('phone', phone)
     req.append('message', message);
-    console.log(req)
+    await console.log(JSON.stringify(req));
 
 
     const url = createUrl;
