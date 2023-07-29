@@ -77,7 +77,7 @@ const Contact = ({ toggleContact }) => {
       options.body = formData;
       options.headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'HTTP_X_CSRFTOKEN': token
+        'X-CSRFToken': token
       };
       console.log(createUrl);
       console.log(options);
