@@ -46,19 +46,19 @@ function getCookie(name) {
     console.log(JSON.stringify(formData));
 
     try {
-      // let csrf = await fetch(csrfUrl)
-      // console.log(csrf);
-      // let data = await csrf.json();
-      // console.log(data);
-      // let token = data.csrfToken;
-      // console.log(token);
+      let csrf = await fetch(csrfUrl)
+      console.log(csrf);
+      let data = await csrf.json();
+      console.log(data);
+      let token = data.csrfToken;
+      console.log(token);
       const options = {};
       options.method = "POST";
       options.body = formData;
       options.credentials = 'include';
       options.headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'X-CSRFToken': getCookie('csrftoken')
+        'X-CSRFToken': token
       };
       console.log(createUrl);
       console.log(options);
