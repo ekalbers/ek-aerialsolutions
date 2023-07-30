@@ -21,45 +21,44 @@ const Contact = ({ toggleContact }) => {
     }))
   }
 
-  function getCookie(name) {
+function getCookie(name) {
     let cookieValue = null;
+
     if (document.cookie && document.cookie !== '') {
-      const cookies = document.cookie.split(';');
-      for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        // Check if the cookie name matches the CSRF cookie name (usually 'csrftoken')
-        if (cookie.substring(0, name.length + 1) === name + '=') {
-          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-          break;
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+
+                break;
+            }
         }
-      }
     }
 
     return cookieValue;
-
-    // const value = `; ${document.cookie}`;
-    // const parts = value.split(`; ${name}=`);
-    // if (parts.length === 2) return parts.pop().split(';').shift();
-  }
+}
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(JSON.stringify(formData));
 
     try {
-      let csrf = await fetch(csrfUrl)
-      console.log(csrf);
-      let data = await csrf.json();
-      console.log(data);
-      let token = data.csrfToken;
-      console.log(token);
+      // let csrf = await fetch(csrfUrl)
+      // console.log(csrf);
+      // let data = await csrf.json();
+      // console.log(data);
+      // let token = data.csrfToken;
+      // console.log(token);
       const options = {};
       options.method = "POST";
       options.body = formData;
       options.credentials = 'include';
       options.headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'X-CSRFToken': token
+        'X-CSRFToken': getCookie('csrftoken')
       };
       console.log(createUrl);
       console.log(options);
