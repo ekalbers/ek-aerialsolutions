@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export const createUrl = process.env.NEXT_PUBLIC_API_CREATE;
-export const csrfUrl = process.env.NEXT_PUBLIC_API_CSRFTOKEN
 
 
 const Contact = ({ toggleContact }) => {
@@ -21,59 +20,20 @@ const Contact = ({ toggleContact }) => {
     }))
   }
 
-  const login = async (username, password) => {
-    try {
-      const response = await fetch('/api/token/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const token = data.access;
-        // Save the token in your frontend state or a cookie for subsequent authenticated requests
-        console.log('Authentication successful. Token:', token);
-        return token;
-      } else {
-        console.error('Authentication failed.');
-        return null;
-      }
-    } catch (error) {
-      console.error('Error during authentication:', error);
-      return null;
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // let csrf = await fetch(csrfUrl)
-      // console.log(csrf);
-      // let data = await csrf.json();
-      // console.log(data);
-      // let token = data.csrfToken;
-      // console.log(token);
       const options = {};
       options.method = "POST";
       options.body = JSON.stringify(formData);
       options.headers = {
         'Content-Type': 'application/json',
-        // 'X-CSRFToken': token
       };
-      console.log(createUrl);
-      console.log(options);
       const response = await fetch(createUrl, options);
-      console.log(response);
       console.log(await response.text());
     } catch (err) {
-      console.log("error", err);
+      console.error(err);
     }
 
     toggleContact();
