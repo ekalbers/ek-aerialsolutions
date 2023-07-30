@@ -52,22 +52,20 @@ const Contact = ({ toggleContact }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(JSON.stringify(formData));
 
     try {
-      let csrf = await fetch(csrfUrl)
-      console.log(csrf);
-      let data = await csrf.json();
-      console.log(data);
-      let token = data.csrfToken;
-      console.log(token);
+      // let csrf = await fetch(csrfUrl)
+      // console.log(csrf);
+      // let data = await csrf.json();
+      // console.log(data);
+      // let token = data.csrfToken;
+      // console.log(token);
       const options = {};
       options.method = "POST";
       options.body = JSON.stringify(formData);
-      options.credentials = 'include';
       options.headers = {
         'Content-Type': 'application/json',
-        'X-CSRFToken': token
+        // 'X-CSRFToken': token
       };
       console.log(createUrl);
       console.log(options);
