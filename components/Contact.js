@@ -21,25 +21,34 @@ const Contact = ({ toggleContact }) => {
     }))
   }
 
-function getCookie(name) {
-    let cookieValue = null;
+  const login = async (username, password) => {
+    try {
+      const response = await fetch('/api/token/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
 
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-
-                break;
-            }
-        }
+      if (response.ok) {
+        const data = await response.json();
+        const token = data.access;
+        // Save the token in your frontend state or a cookie for subsequent authenticated requests
+        console.log('Authentication successful. Token:', token);
+        return token;
+      } else {
+        console.error('Authentication failed.');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error during authentication:', error);
+      return null;
     }
-
-    return cookieValue;
-}
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,10 +63,10 @@ function getCookie(name) {
       console.log(token);
       const options = {};
       options.method = "POST";
-      options.body = formData;
+      options.body = JSON.stringify(formData);
       options.credentials = 'include';
       options.headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
         'X-CSRFToken': token
       };
       console.log(createUrl);
