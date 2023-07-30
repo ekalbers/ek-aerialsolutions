@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 export const createUrl = process.env.NEXT_PUBLIC_API_CREATE;
 export const csrfUrl = process.env.NEXT_PUBLIC_API_CSRFTOKEN
 
@@ -43,38 +44,19 @@ const Contact = ({ toggleContact }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const name = document.getElementById('name').value;
-    // const company = document.getElementById('company').value;
-    // const email = document.getElementById('email').value;
-    // const phone = document.getElementById('phone').value;
-    // const message = document.getElementById('message').value;
-    // console.log(name)
-    // console.log(company)
-    // console.log(email)
-    // console.log(phone)
-    // console.log(message)
-    // const req = new FormData();
-    // req.append('name', name);
-    // req.append('company', company);
-    // req.append('email', email);
-    // req.append('phone', phone)
-    // req.append('message', message);
-    // await console.log(JSON.stringify(req));
-
     console.log(JSON.stringify(formData));
 
     try {
       let csrf = await fetch(csrfUrl)
       console.log(csrf);
-      const data = await csrf.json();
-      const token = data.csrfToken;
-      // const csrfToken = getCookie('csrftoken');
+      let data = await csrf.json();
+      console.log(data);
+      let token = data.csrfToken;
       console.log(token);
       const options = {};
-      // const headers = new Headers();
-      // headers.append('X-CSRFToken', csrfToken);
       options.method = "POST";
       options.body = formData;
+      options.credentials = 'include';
       options.headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
         'X-CSRFToken': token
