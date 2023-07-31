@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Home from "@/components/Home";
 import Contact from "@/components/Contact";
 import Thanks from "@/components/Thanks";
+import ModelViewer from "@/components/ModelViewer";
 
 export default function Main() {
-  const [showHome, setShowHome] = useState(true);
-  const [showContact, setShowContact] = useState(true);
+  const [showHome, setShowHome] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+  const [showThanks, setShowThanks] = useState(false);
 
   const toggleHome = () => {
     setShowHome(!showHome);
