@@ -10,8 +10,8 @@ const Header = () => {
   const toggleHome = () => {
     updateState({
       homeButton: false,
-      servicesButton: true,
-      contactButton: true,
+      servicesButton: false,
+      contactButton: false,
       Home: true,
       Contact: true,
     })

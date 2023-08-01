@@ -7,6 +7,7 @@ const Home = () => {
   const handleContact = () => {
     updateState({
       homeButton: true,
+      servicesButton: true,
       contactButton: false,
       Home: false
     });
@@ -15,6 +16,7 @@ const Home = () => {
   const handleServices = () => {
     updateState({
       homeButton: true,
+      contactButton: true,
       servicesButton: false,
       Home: false,
       Contact: false

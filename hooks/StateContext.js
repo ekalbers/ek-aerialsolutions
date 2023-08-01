@@ -14,8 +14,8 @@ export function useUpdateStateContext() {
 export default function StateProvider({children}) {
   const [state, setState] = useState({
     homeButton: false,
-    servicesButton: true,
-    contactButton: true,
+    servicesButton: false,
+    contactButton: false,
     loginButton: true,
     logoutButton: false,
     Home: true,

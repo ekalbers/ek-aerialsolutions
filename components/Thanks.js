@@ -8,7 +8,8 @@ const Thanks = () => {
   const handleClick = () => {
     updateState({
       homeButton: false,
-      servicesButton: true,
+      servicesButton: false,
+      contactButton: false,
       Home: true,
       Contact: true
     })
