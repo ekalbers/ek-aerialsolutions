@@ -1,6 +1,26 @@
 import React from "react";
+import {useUpdateStateContext} from "@/hooks/StateContext";
 
-const Home = ({ toggleHome }) => {
+const Home = () => {
+  const updateState = useUpdateStateContext()
+
+  const handleContact = () => {
+    updateState({
+      homeButton: true,
+      contactButton: false,
+      Home: false
+    });
+  }
+
+  const handleServices = () => {
+    updateState({
+      homeButton: true,
+      servicesButton: false,
+      Home: false,
+      Contact: false
+    });
+  }
+
   return (
     <>
       <div className='items-center justify-center'>
@@ -9,14 +29,13 @@ const Home = ({ toggleHome }) => {
         <p className="text-center mb-6 text-lg font-normal text-white">Here at
           EK Aerial Solutions we specialize in creating orthomosaic maps and 3D models for real estate, construction projects, golf courses, and more!</p>
         <div className='text-center'>
-          <button onClick={toggleHome}
-             className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+          <button onClick={handleContact}
+             className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-500 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 border-gray-600 hover:bg-gray-100">
             Contact Us
-              <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 14 10">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
+          </button>
+          <button onClick={handleServices}
+             className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-500 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 border-gray-600 hover:bg-gray-100">
+            Services
           </button>
         </div>
       </div>

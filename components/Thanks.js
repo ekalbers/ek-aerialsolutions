@@ -1,10 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import {useUpdateStateContext} from "@/hooks/StateContext";
 
-const Thanks = ({ toggleHome, toggleContact }) => {
+const Thanks = () => {
+  const updateState = useUpdateStateContext()
+
   const handleClick = () => {
-    toggleHome();
-    toggleContact();
+    updateState({
+      homeButton: false,
+      servicesButton: true,
+      Home: true,
+      Contact: true
+    })
   }
 
   return (
@@ -15,13 +22,8 @@ const Thanks = ({ toggleHome, toggleContact }) => {
         <p className="text-center mb-6 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">We will contact you in the next 24-48 hours to discuss your project!</p>
         <div className='text-center'>
           <button onClick={handleClick}
-             className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+             className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-500 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 border-gray-600 hover:bg-gray-100">
             Home
-              <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 14 10">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
           </button>
         </div>
       </div>
