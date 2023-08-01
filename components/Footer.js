@@ -1,10 +1,22 @@
 import React from "react";
 import Link from "next/link";
+import {useUpdateStateContext} from "@/hooks/StateContext";
 
 export default function Footer() {
+  const updateState = useUpdateStateContext()
+
+  const handleClick = () => {
+    updateState({
+      homeButton: false,
+      servicesButton: false,
+      contactButton: false,
+      Services: false,
+      Contact: false,
+    })
+  }
   return (
     <>
-      <footer className="bg-white shadow relative z-10">
+      <footer className="bg-white border-[2px] shadow relative z-10">
         <div className="w-full max-w-screen-xl mx-auto md:py-8">
           <div className='mb-5 text-center text-gray-500 text-xl'>
             <p className='font-bold text-black'>Contact Us:</p>
@@ -16,10 +28,10 @@ export default function Footer() {
             <p>Gainesville, FL</p>
             <p>Serving all of Florida</p>
           </div>
-          <div className="items-center justify-center">
-            <Link href="#" className="flex items-center justify-center sm:mb-0">
+          <div className="items-center text-center">
+            <button onClick={handleClick} className="items-center justify-center">
               <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="h-10" alt="EK Drones Logo"/>
-            </Link>
+            </button>
           </div>
         </div>
       </footer>

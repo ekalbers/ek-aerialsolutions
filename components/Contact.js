@@ -40,7 +40,8 @@ const Contact = () => {
 
     updateState({
       contactButton: true,
-      Contact: false
+      Contact: false,
+      Thanks: true
     });
   }
 

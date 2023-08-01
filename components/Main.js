@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Home from "@/components/Home";
 import Contact from "@/components/Contact";
 import Thanks from "@/components/Thanks";
+import Services from "@/components/Services";
 import {useStateContext, useUpdateStateContext} from "@/hooks/StateContext";
 
 export default function Main() {
@@ -34,18 +35,24 @@ export default function Main() {
 
   return (
     <>
-      <main>
-        <div className="p-10 min-h-screen bg-cover bg-center bg-no-repeat items-center justify-center" style={{ backgroundImage: "url('/DJI_0428.JPG')" }}>
+      <main className="pt-16">
+        { state.Services ? (
+          <Services />
+        ) : (
+          <div className="p-10 min-h-screen bg-cover bg-center bg-no-repeat items-center justify-center" style={{ backgroundImage: "url('/DJI_0428.JPG')" }}>
           <div className='p-10 relative z-10'>
-            {state.Home ? (
-              <Home toggleHome={toggleHome}/>
+            { state.Services ? (
+              <Thanks toggleHome={toggleHome} toggleContact={toggleContact}/>
             ) : state.Contact ? (
               <Contact toggleContact={toggleContact}/>
+            ) : state.Thanks ? (
+              <Thanks />
             ) : (
-              <Thanks toggleHome={toggleHome} toggleContact={toggleContact}/>
+              <Home toggleHome={toggleHome}/>
             )}
           </div>
         </div>
+        )}
       </main>
     </>
   );

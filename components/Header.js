@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useStateContext, useUpdateStateContext } from "@/hooks/StateContext";
-import NavButton from "@/components/NavButton";
+import UserButton from "@/components/UserButton";
 
 const Header = () => {
   const state = useStateContext();
@@ -12,8 +12,8 @@ const Header = () => {
       homeButton: false,
       servicesButton: false,
       contactButton: false,
-      Home: true,
-      Contact: true,
+      Services: false,
+      Contact: false,
     })
   }
 
@@ -22,7 +22,7 @@ const Header = () => {
       homeButton: true,
       servicesButton: false,
       contactButton: true,
-      Home: false,
+      Services: true,
       Contact: false,
     })
   }
@@ -32,25 +32,19 @@ const Header = () => {
       homeButton: true,
       servicesButton: true,
       contactButton: false,
-      Home: false,
+      Services: false,
       Contact: true,
-    })
-  }
-
-  const toggleLogin = () => {
-    updateState({
-      loginButton: !state.loginButton
     })
   }
 
   return (
     <>
-      <header>
+      <header className="fixed w-full h-18 border-[2px]">
         <nav className="bg-white border-gray-200">
           <div className="flex justify-between items-center">
-            <Link href="/" className='flex'>
+            <button onClick={toggleHome} className='flex'>
               <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="h-16 m-2" alt="EK Drones Logo"/>
-            </Link>
+            </button>
             <div>
               { state.homeButton ? (
                 <Link href='' className='m-4 text-lg text-gray-500 hover:bg-gray-100'>
@@ -73,17 +67,8 @@ const Header = () => {
               ) : (
                 <></>
               )}
-              { state.loginButton ? (
-                <Link href='' className='py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-500 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 border-gray-600 hover:bg-gray-100'>
-                  <button onClick={toggleLogin}>Customer Login</button>
-                </Link>
-              ) : (
-                <Link href='' className='py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-500 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 border-gray-600 hover:bg-gray-100'>
-                  <button onClick={toggleLogin}>Profile</button>
-                </Link>
-              )}
+              <UserButton />
             </div>
-
           </div>
         </nav>
       </header>
