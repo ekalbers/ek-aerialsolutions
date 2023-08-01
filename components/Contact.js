@@ -3,7 +3,7 @@ import {useUpdateStateContext} from "@/hooks/StateContext";
 
 export const createUrl = process.env.NEXT_PUBLIC_API_CREATE;
 
-const Contact = ({ toggleContact }) => {
+const Contact = () => {
   const updateState = useUpdateStateContext()
 
   const [formData, setFormData] = useState({
@@ -81,7 +81,7 @@ const Contact = ({ toggleContact }) => {
           </div>
           <div className='flex items-center justify-center'>
             <button type='submit'
-                    className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-500 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 border-gray-600 hover:bg-gray-100">Submit
+                    className="py-2.5 px-5 mr-2 mb-2 text-md font-medium text-gray-500 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 border-gray-600 hover:bg-gray-100">Submit
             </button>
           </div>
         </form>
