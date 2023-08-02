@@ -2,8 +2,10 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Main from "@/components/Main";
 import Footer from "@/components/Footer";
+import StateProvider from '@/hooks/StateContext'
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -11,9 +13,11 @@ export default function Home() {
         <meta name="description" content="Homepage for EK Drones" />
         <link rel='icon' href='/ek-drones-website-favicon-white.png'/>
       </Head>
-      <Header />
-      <Main />
-      <Footer />
+      <StateProvider>
+        <Header />
+        <Main />
+        <Footer />
+      </StateProvider>
     </>
   )
 }
