@@ -67,7 +67,6 @@ const Header = () => {
               ) : (
                 <></>
               )}
-              <UserButton />
             </div>
           </div>
         </nav>

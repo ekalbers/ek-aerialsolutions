@@ -26,9 +26,8 @@ const Home = () => {
     <>
       <div className='items-center justify-center'>
         <h1
-          className="text-center mb-4 text-5xl font-extrabold text-white">Real World Mapping and 3D Modeling</h1>
-        <p className="text-center mb-6 text-lg font-normal text-white">Here at
-          EK Aerial Solutions we specialize in creating orthomosaic maps and 3D models for real estate, construction projects, golf courses, and more!</p>
+          className="text-center mb-4 text-5xl font-extrabold text-white">Creating value from the Air!</h1>
+        <p className="text-center mb-6 text-lg font-normal text-white">Let us assist you in leveling up your project using drone photography and photogrammetry. Drones can provide tremendous value in many industries, anywhere from Real Estate to Construction Management!</p>
         <div className='text-center'>
           <button onClick={handleContact}
              className="py-2.5 px-5 mr-2 mb-2 text-md font-medium text-gray-500 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-200 border-gray-600 hover:bg-gray-100">
