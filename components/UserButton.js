@@ -12,7 +12,7 @@ const UserButton = () => {
 
   const isLoggedIn = async () => {
     console.log('loggedIn')
-    const response = await fetch('https://www.ekaerialsolutions.com/api/auth/me');
+    const response = await fetch('https://ek-aerialsolutions-git-auth0-ekalbers.vercel.app/api/auth/me');
     if (response.status === 200) {
       updateState({ loggedIn: true });
     }
