@@ -45,7 +45,7 @@ const Header = () => {
             <button onClick={toggleHome} className='flex'>
               <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="xl:h-16 xl:m-2 sm:w-fit" alt="EK Drones Logo"/>
             </button>
-            <div className="sm:text-center">
+            <div className="md:text-center">
               { state.homeButton ? (
                 <Link href='' className='m-4 text-lg text-gray-500 hover:bg-gray-100'>
                   <button onClick={toggleHome}>Home</button>
