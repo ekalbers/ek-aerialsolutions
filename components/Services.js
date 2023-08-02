@@ -1,9 +1,6 @@
 import React from "react";
-import {useUpdateStateContext} from "@/hooks/StateContext";
 
 const Services = () => {
-  const updateState = useUpdateStateContext()
-
   return (
     <>
       <div className="pt-4 bg-white">
