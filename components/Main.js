@@ -39,7 +39,7 @@ export default function Main() {
         { state.Services ? (
           <Services />
         ) : (
-          <div className="p-10 min-h-screen bg-cover bg-center bg-no-repeat items-center justify-center" style={{ backgroundImage: "url('/DJI_0428.JPG')" }}>
+          <div className="p-10 min-h-screen bg-cover bg-center bg-no-repeat items-center justify-center" style={{ backgroundImage: "url('/MuseumPark.jpg')" }}>
           <div className='p-10 relative z-10'>
             { state.Services ? (
               <Thanks toggleHome={toggleHome} toggleContact={toggleContact}/>
