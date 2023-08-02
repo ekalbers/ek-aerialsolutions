@@ -23,7 +23,12 @@ const Contact = () => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      phone: prevFormData.phone === '' ? 'none' : prevFormData.phone,
+      message: prevFormData.message === '' ? 'none' : prevFormData.message,
+    }));
 
     try {
       const options = {};
@@ -48,7 +53,7 @@ const Contact = () => {
   return (
     <>
       <div className='flex items-center justify-center'>
-        <form className='w-2/6' onSubmit={handleSubmit}>
+        <form className='xl:w-2/6 sm:w-5/6' onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
             <input type="text" id='name' name='name' value={formData.name} onChange={handleChange}

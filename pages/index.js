@@ -11,6 +11,7 @@ export default function Home() {
       <Head>
         <title>E.K. Drones</title>
         <meta name="description" content="Homepage for EK Drones" />
+        <meta name="viewport"content="width=device-width, initial-scale=1.0" />
         <link rel='icon' href='/ek-drones-website-favicon-white.png'/>
       </Head>
       <StateProvider>
