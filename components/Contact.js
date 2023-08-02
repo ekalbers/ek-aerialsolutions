@@ -24,6 +24,18 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.phone === '') {
+      setFormData((prevData) => ({
+        ...prevData,
+        phone: 'none',
+      }))
+    }
+    if (formData.message === '') {
+      setFormData((prevData) => ({
+        ...prevData,
+        message: 'none',
+      }))
+    }
 
     try {
       const options = {};
