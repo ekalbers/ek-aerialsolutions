@@ -9,7 +9,7 @@ const Home = () => {
       homeButton: true,
       servicesButton: true,
       contactButton: false,
-      Home: false
+      Contact: true
     });
   }
 
@@ -18,8 +18,7 @@ const Home = () => {
       homeButton: true,
       contactButton: true,
       servicesButton: false,
-      Home: false,
-      Contact: false
+      Services: true
     });
   }
 

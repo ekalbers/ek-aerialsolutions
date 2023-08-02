@@ -16,10 +16,10 @@ export default function StateProvider({children}) {
     homeButton: false,
     servicesButton: false,
     contactButton: false,
-    loginButton: true,
-    logoutButton: false,
-    Home: true,
-    Contact: true,
+    Services: false,
+    Contact: false,
+    Thanks: false,
+    loggedIn: false
   })
 
   const updateState = (newState) => {

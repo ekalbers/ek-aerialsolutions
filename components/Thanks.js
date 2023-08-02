@@ -10,8 +10,9 @@ const Thanks = () => {
       homeButton: false,
       servicesButton: false,
       contactButton: false,
-      Home: true,
-      Contact: true
+      Services: false,
+      Contact: false,
+      Thanks: false
     })
   }
 
