@@ -41,11 +41,11 @@ const Header = () => {
     <>
       <header className="fixed w-full h-18 border-[2px]">
         <nav className="bg-white border-gray-200">
-          <div className="flex justify-between items-center">
+          <div className="xl:flex justify-between items-center">
             <button onClick={toggleHome} className='flex'>
-              <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="h-16 m-2" alt="EK Drones Logo"/>
+              <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="xl:h-16 xl:m-2 sm:w-fit" alt="EK Drones Logo"/>
             </button>
-            <div>
+            <div className="sm:text-center">
               { state.homeButton ? (
                 <Link href='' className='m-4 text-lg text-gray-500 hover:bg-gray-100'>
                   <button onClick={toggleHome}>Home</button>
