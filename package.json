@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.0.1",
+    "@vercel/analytics": "^1.0.1",
     "autoprefixer": "10.4.14",
     "dotenv": "^16.3.1",
     "eslint": "8.45.0",
