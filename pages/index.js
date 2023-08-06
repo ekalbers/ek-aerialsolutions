@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>EK Aerial Solutions - Using Drones for Mapping, 3D Modeling, Photography, and More!</title>
-        <meta name="description" content="Unlock stunning perspectives with EK Aerial Solutions. Our drone services offer top-tier aerial photography and videography solutions. Capture the extraordinary from above. Visit us at www.ekaerialsolutions.com." />
+        <title>EK Aerial Solutions - Drone Services Provider</title>
+        <meta name="description" content="Unlock stunning perspectives with EK Aerial Solutions. Our drone services offer top-tier aerial photography, orthmosaic mapping, 3D Modeling, and More. Capture the extraordinary from above. Visit us at www.ekaerialsolutions.com." />
         <meta name="viewport"content="width=device-width, initial-scale=1.0" />
         <link rel='icon' href='/ek-drones-website-favicon-white.png'/>
       </Head>
