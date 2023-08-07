@@ -28,10 +28,20 @@ export default function Footer() {
             <p>Gainesville, FL</p>
             <p>Serving all of Florida</p>
           </div>
-          <div className="items-center text-center">
-            <button onClick={handleClick} className="items-center justify-center">
-              <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="h-10" alt="EK Drones Logo"/>
-            </button>
+          <div>
+            <div className="flex mt-4 space-x-5 sm:justify-center md:mt-0">
+              <a href="https://www.instagram.com/ekaerialsolutions/" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                Instagram
+              </a>
+              <a href="https://www.linkedin.com/company/ek-aerial-solutions/" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                LinkedIn
+              </a>
+            </div>
+            <div className="items-center text-center">
+              <button onClick={handleClick} className="items-center justify-center">
+                <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="h-10" alt="EK Drones Logo"/>
+              </button>
+            </div>
           </div>
         </div>
       </footer>
