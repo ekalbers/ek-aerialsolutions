@@ -14,6 +14,16 @@ export default function Home() {
         <meta name="viewport"content="width=device-width, initial-scale=1.0" />
         <meta name="ahrefs-site-verification" content="b1aaaaf4c137c95893ffb1fc663642599cbab96e6cf4acf5d9c67c21069a153b" />
         <link rel='icon' href='/ek-drones-website-favicon-white.png'/>
+        {/* google analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV48DYNR5L">
+        </script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-QV48DYNR5L');
+        </script>
       </Head>
       <StateProvider>
         <Header />
