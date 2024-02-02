@@ -12,9 +12,10 @@ export default function Home() {
       <Head>
         <title>Drone Services - Aerial Photography - Construction Monitoring</title>
         <meta name="description" content="Our drone services offer top-tier aerial photography, construction progress monitoring, and More." />
-        <meta name="viewport"content="width=device-width, initial-scale=1.0" />
+        <meta property="site_name" content="EK Aerial Solutions" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="ahrefs-site-verification" content="b1aaaaf4c137c95893ffb1fc663642599cbab96e6cf4acf5d9c67c21069a153b" />
-        <link rel='icon' href='/ek-drones-website-favicon-white.png'/>
+        <link rel='icon' href='/ek-drones-website-favicon-white.png' />
 
       </Head>
       {/* Google Analytics */}
