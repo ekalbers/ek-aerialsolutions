@@ -6,7 +6,7 @@ const Services = () => {
       <div className="pt-4 bg-white">
         <div className="xl:flex max-h-[85vh] w-full items-center">
           <div className="max-h-[85vh]">
-            <img src="/Museum.jpg" className="xl:h-fit md:w-fit" alt="EK Drones Logo"/>
+            <img src="/Museum.jpg" className="xl:h-fit md:w-fit" alt="EK Drones Logo" />
           </div>
           <div className="text-left p-4">
             <h1
@@ -21,12 +21,12 @@ const Services = () => {
             <p className="mb-6 text-lg font-normal text-gray-500">Get high resolution orthomosaic maps of your property with GPS accuracy down to the inch.</p>
           </div>
           <div className="max-h-[85vh]">
-            <img src="/ComercialOrtho.jpg" className="xl:h-fit md:w-fit" alt="EK Drones Logo"/>
+            <img src="/Orthophoto.jpg" className="xl:h-fit md:w-fit" alt="EK Drones Logo" />
           </div>
         </div>
         <div className="xl:flex max-h-[85vh] w-full items-center md:w-fit">
           <div className="max-h-[85vh]">
-            <img src="/Comercial3D.jpg" className="xl:h-fit md:w-fit" alt="EK Drones Logo"/>
+            <img src="/Comercial3D.jpg" className="xl:h-fit md:w-fit" alt="EK Drones Logo" />
           </div>
           <div className="text-left p-4">
             <h1
@@ -41,7 +41,7 @@ const Services = () => {
             <p className="mb-6 text-lg font-normal text-gray-500">Using photogrammetry, we can create elevation maps, measure volume of static objects, create topographical map, and more!</p>
           </div>
           <div className="max-h-[85vh]">
-            <img src="/ApartmentElev.jpg" className="xl:h-fit md:w-fit" alt="EK Drones Logo"/>
+            <img src="/ApartmentElev.jpg" className="xl:h-fit md:w-fit" alt="EK Drones Logo" />
           </div>
         </div>
       </div>
