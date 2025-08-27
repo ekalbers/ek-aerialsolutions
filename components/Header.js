@@ -42,25 +42,25 @@ const Header = () => {
       <header className="fixed w-full h-18 border-[2px]">
         <nav className="bg-white border-gray-200">
           <div className="xl:flex justify-between items-center">
-            <button onClick={toggleHome} className='flex'>
-              <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="xl:h-16 xl:m-2 sm:w-fit" alt="EK Drones Logo"/>
+            <button onClick={() => window.location.href = 'https://ekaerialsolutions.com'} className='flex'>
+              <img src="/ek-aerial-solutions-low-resolution-logo-black-on-transparent-background.png" className="xl:h-16 xl:m-2 sm:w-fit" alt="EK Drones Logo" />
             </button>
             <div className="md:text-center">
-              { state.homeButton ? (
+              {state.homeButton ? (
                 <Link href='' className='m-4 text-lg text-gray-500 hover:bg-gray-100'>
                   <button onClick={toggleHome}>Home</button>
                 </Link>
               ) : (
                 <></>
               )}
-              { state.servicesButton ? (
+              {state.servicesButton ? (
                 <Link href='' className='m-4 text-lg text-gray-500 hover:bg-gray-100'>
                   <button onClick={toggleServices}>Services</button>
                 </Link>
               ) : (
                 <></>
               )}
-              { state.contactButton ? (
+              {state.contactButton ? (
                 <Link href='' className='m-4 text-lg text-gray-500 hover:bg-gray-100'>
                   <button onClick={toggleContact}>Contact</button>
                 </Link>
