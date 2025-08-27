@@ -21,6 +21,10 @@ const Terms = () => {
             <div className='items-center justify-center p-28'>
                 <h1
                     className="text-center mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Terms of Service:</h1>
+                <h2 className="text-left mb-2 text-lg font-bold text-white lg:text-xl sm:px-16 xl:px-48">Scheduling:</h2>
+                <p className="text-left mb-6 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">
+                    Bookings can be scheduled up to 90 days from the date of purchase.
+                </p>
                 <h2 className="text-left mb-2 text-lg font-bold text-white lg:text-xl sm:px-16 xl:px-48">Ownership and Usage:</h2>
                 <p className="text-left mb-6 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">
                     The client will have the right to use the final photos and videos for their intended purpose, whether it be for personal or commercial use. Provider retains the right to use the photos and videos for promotional purposes so long as Provider does not disclose the identity or any personal information of the Client without the written approval of the client.
