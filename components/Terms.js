@@ -29,6 +29,10 @@ const Terms = () => {
                 <p className="text-left mb-6 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">
                     The client will have the right to use the final photos and videos for their intended purpose, whether it be for personal or commercial use. Provider retains the right to use the photos and videos for promotional purposes so long as Provider does not disclose the identity or any personal information of the Client without the written approval of the client.
                 </p>
+                <h2 className="text-left mb-2 text-lg font-bold text-white lg:text-xl sm:px-16 xl:px-48">Approximate Property Lines:</h2>
+                <p className="text-left mb-6 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">
+                    Any depictions of property lines added to aerial photos are approximates and should not be interpreted as a subsitute for the work of a licensed surveyor.
+                </p>
                 <h2 className="text-left mb-2 text-lg font-bold text-white lg:text-xl sm:px-16 xl:px-48">Safe Practices:</h2>
                 <p className="text-left mb-6 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48">
                     Pilot follows FAA Part 107 Regulation to the best of their ability to include not flying over crowds of people or traffic.
